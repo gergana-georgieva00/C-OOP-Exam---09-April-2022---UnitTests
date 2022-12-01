@@ -84,5 +84,11 @@ namespace SmartphoneShop.Tests
             shop.Add(smartphone);
             shop.TestPhone("phoneModel", 10);
         }
+
+        [Test]
+        public void ChargePhoneWithNonExistentPhoneShouldThrow()
+        {
+            Assert.Throws<InvalidOperationException>(() => shop.ChargePhone("model"));
+        }
     }
 }
