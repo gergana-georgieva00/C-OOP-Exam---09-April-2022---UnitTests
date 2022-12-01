@@ -120,7 +120,7 @@ namespace SmartphoneShop.Tests
         {
             shop.Add(smartphone);
             shop.ChargePhone("phoneModel");
-            Assert.That(shop.Count, Is.EqualTo(1));
+            Assert.That(smartphone.CurrentBateryCharge, Is.EqualTo(smartphone.MaximumBatteryCharge));
         }
     }
 }
