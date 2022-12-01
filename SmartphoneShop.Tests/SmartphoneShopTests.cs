@@ -17,6 +17,14 @@ namespace SmartphoneShop.Tests
         }
 
         [Test]
+        public void TestConstructor()
+        {
+            Assert.That(smartphone.ModelName, Is.EqualTo("phoneModel"));
+            Assert.That(smartphone.MaximumBatteryCharge, Is.EqualTo(100));
+            Assert.That(shop.Capacity, Is.EqualTo(5));
+        }
+
+        [Test]
         public void ShopCapacityGetterWorksCorrectly()
         {
             Assert.That(shop.Capacity, Is.EqualTo(5));
