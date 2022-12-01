@@ -33,5 +33,12 @@ namespace SmartphoneShop.Tests
         {
             Assert.That(shop.Count, Is.EqualTo(0));
         }
+
+        [Test]
+        public void AddPhoneWithExistentPhoneShouldThrow()
+        {
+            shop.Add(smartphone);
+            Assert.Throws<InvalidOperationException>(() => shop.Add(smartphone));
+        }
     }
 }
