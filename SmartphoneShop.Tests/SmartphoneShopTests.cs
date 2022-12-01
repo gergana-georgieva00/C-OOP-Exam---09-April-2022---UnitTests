@@ -40,5 +40,13 @@ namespace SmartphoneShop.Tests
             shop.Add(smartphone);
             Assert.Throws<InvalidOperationException>(() => shop.Add(smartphone));
         }
+
+        [Test]
+        public void AddPhoneOnFullCapacityShouldThrow()
+        {
+            shop = new Shop(1);
+            shop.Add(smartphone);
+            Assert.Throws<InvalidOperationException>(() => shop.Add(new Smartphone("model", 10)));
+        }
     }
 }
