@@ -23,6 +23,13 @@ namespace SmartphoneShop.Tests
         }
 
         [Test]
+        public void ShopCapacitySetterWorksCorrectly()
+        {
+            shop = new Shop(15);
+            Assert.That(shop.Capacity, Is.EqualTo(15));
+        }
+
+        [Test]
         public void ShopCapacitySetterWithNegativeCapacityShouldThrow()
         {
             Assert.Throws<ArgumentException>(() => shop = new Shop(-2));
