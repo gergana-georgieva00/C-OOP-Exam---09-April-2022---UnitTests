@@ -99,10 +99,11 @@ namespace SmartphoneShop.Tests
         }
 
         [Test]
-        public void chargePhoneMethodWorksCorrectly()
+        public void ChargePhoneMethodWorksCorrectly()
         {
             shop.Add(smartphone);
             shop.ChargePhone("phoneModel");
+            Assert.That(shop.Count, Is.EqualTo(1));
         }
     }
 }
