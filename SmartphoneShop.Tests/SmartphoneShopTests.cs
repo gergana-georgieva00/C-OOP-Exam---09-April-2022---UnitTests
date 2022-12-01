@@ -74,7 +74,8 @@ namespace SmartphoneShop.Tests
         public void TestPhoneWithLowBatteryShouldThrow()
         {
             smartphone = new Smartphone("phoneName", 2);
-            Assert.Throws<InvalidOperationException>(() => shop.TestPhone("model", 6));
+            shop.Add(smartphone);
+            Assert.Throws<InvalidOperationException>(() => shop.TestPhone("phoneName", 6));
         }
     }
 }
