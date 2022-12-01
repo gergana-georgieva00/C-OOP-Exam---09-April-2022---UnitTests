@@ -27,5 +27,11 @@ namespace SmartphoneShop.Tests
         {
             Assert.Throws<ArgumentException>(() => shop = new Shop(-2));
         }
+
+        [Test]
+        public void ShopCountGetterWorksCorrectly()
+        {
+            Assert.That(shop.Count, Is.EqualTo(0));
+        }
     }
 }
