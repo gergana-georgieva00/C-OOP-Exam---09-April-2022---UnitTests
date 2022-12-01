@@ -90,6 +90,7 @@ namespace SmartphoneShop.Tests
         {
             shop.Add(smartphone);
             shop.TestPhone("phoneModel", 10);
+            Assert.That(shop.Count, Is.EqualTo(1));
         }
 
         [Test]
