@@ -65,6 +65,14 @@ namespace SmartphoneShop.Tests
         }
 
         [Test]
+        public void AddPhoneIncreasesCount()
+        {
+            shop = new Shop(1);
+            shop.Add(smartphone);
+            Assert.That(shop.Count, Is.EqualTo(1));
+        }
+
+        [Test]
         public void RemovePhoneWithNonExistentPhoneShouldThrow()
         {
             Assert.Throws<InvalidOperationException>(() => shop.Remove("model"));
@@ -98,7 +106,7 @@ namespace SmartphoneShop.Tests
         {
             shop.Add(smartphone);
             shop.TestPhone("phoneModel", 10);
-            Assert.That(shop.Count, Is.EqualTo(1));
+            Assert.That(smartphone.CurrentBateryCharge, Is.EqualTo(90));
         }
 
         [Test]
