@@ -77,5 +77,12 @@ namespace SmartphoneShop.Tests
             shop.Add(smartphone);
             Assert.Throws<InvalidOperationException>(() => shop.TestPhone("phoneName", 6));
         }
+
+        [Test]
+        public void TestPhoneMethodWorksCorrectly()
+        {
+            shop.Add(smartphone);
+            shop.TestPhone("phoneModel", 10);
+        }
     }
 }
