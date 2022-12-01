@@ -54,5 +54,13 @@ namespace SmartphoneShop.Tests
         {
             Assert.Throws<InvalidOperationException>(() => shop.Remove("model"));
         }
+
+        [Test]
+        public void ShopRemovePhoneMethodWorksCorrectly()
+        {
+            shop.Add(smartphone);
+            shop.Remove("phoneModel");
+            Assert.That(shop.Count, Is.EqualTo(0));
+        }
     }
 }
