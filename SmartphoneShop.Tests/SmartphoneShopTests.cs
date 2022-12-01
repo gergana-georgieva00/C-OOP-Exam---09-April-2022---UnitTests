@@ -119,6 +119,7 @@ namespace SmartphoneShop.Tests
         public void ChargePhoneMethodWorksCorrectly()
         {
             shop.Add(smartphone);
+            shop.TestPhone("phoneModel", 20);
             shop.ChargePhone("phoneModel");
             Assert.That(smartphone.CurrentBateryCharge, Is.EqualTo(smartphone.MaximumBatteryCharge));
         }
