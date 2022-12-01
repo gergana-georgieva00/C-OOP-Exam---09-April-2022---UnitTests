@@ -62,5 +62,12 @@ namespace SmartphoneShop.Tests
             shop.Remove("phoneModel");
             Assert.That(shop.Count, Is.EqualTo(0));
         }
+
+
+        [Test]
+        public void TestPhoneWithNonExistentPhoneShouldThrow()
+        {
+            Assert.Throws<InvalidOperationException>(() => shop.TestPhone("model", 6));
+        }
     }
 }
