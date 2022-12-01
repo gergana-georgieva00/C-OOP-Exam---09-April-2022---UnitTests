@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace SmartphoneShop.Tests
 {
@@ -19,6 +20,12 @@ namespace SmartphoneShop.Tests
         public void ShopCapacityGetterWorksCorrectly()
         {
             Assert.That(shop.Capacity, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void ShopCapacitySetterWithNegativeCapacityShouldThrow()
+        {
+            Assert.Throws<ArgumentException>(() => shop = new Shop(-2));
         }
     }
 }
