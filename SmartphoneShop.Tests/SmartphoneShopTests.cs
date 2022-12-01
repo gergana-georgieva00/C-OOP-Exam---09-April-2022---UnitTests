@@ -90,5 +90,12 @@ namespace SmartphoneShop.Tests
         {
             Assert.Throws<InvalidOperationException>(() => shop.ChargePhone("model"));
         }
+
+        [Test]
+        public void chargePhoneMethodWorksCorrectly()
+        {
+            shop.Add(smartphone);
+            shop.ChargePhone("phoneModel");
+        }
     }
 }
