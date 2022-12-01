@@ -48,5 +48,11 @@ namespace SmartphoneShop.Tests
             shop.Add(smartphone);
             Assert.Throws<InvalidOperationException>(() => shop.Add(new Smartphone("model", 10)));
         }
+
+        [Test]
+        public void RemovePhoneWithNonExistentPhoneShouldThrow()
+        {
+            Assert.Throws<InvalidOperationException>(() => shop.Remove("model"));
+        }
     }
 }
